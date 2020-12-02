@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="template">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Ajout des tvs</title>
+</head>
+<body>
+	<div layout:fragment="Mycontent">
+		<div class="container mt-5">
+			<div class="card">
+				<div class="card-header">Modifier des tvs</div>
+				<div class="card-body">
+					<form th:action="@{savetv}" method="post">
+						<div class="form-group">
+							<label class="control-label" hidden>ID tv :</label> <input
+								type="hidden" name="idtv" class="form-control"
+								th:value="${tv.idtv}" />
+						</div>
+						<div class="form-group">
+							<label class="control-label">Nom tv :</label> <input type="text"
+								name="nomtv" class="form-control" th:value="${tv.nomtv}" /> <span
+								th:errors=${tv.nomtv} class="text-danger"> </span> Maouia Allagui
+							maaouia0@gmail.com Page 4 Spring Boot 
+						</div>
+						<div class="form-group">
+							<label class="control-label">Prix tv :</label> <input type="text"
+								name="prixtv" class="form-control" th:value="${tv.prixtv}" /> <span
+								th:errors=${tv.prixtv} class="text-danger"> </span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">date création :</label> <input
+								type="date" name="dateCreation" class="form-control"
+								th:value="${tv.dateCreation}" /> <span
+								th:errors=${tv.dateCreation} class="text-danger"> </span>
+						</div>
+						<div>
+							<button type="submit" class="btn btn-primary">Valider</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
